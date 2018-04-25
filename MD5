@@ -1,0 +1,12 @@
+bd135997ae7c86f88344f9e0e76616ea *DESCRIPTION
+3651a6f6463422c13b932baa3a43bdd9 *NAMESPACE
+490cdf8fe33d1468f48f9bac9344239f *NEWS.md
+362695736dcc5d93bfc3d3ac93af2e0e *R/RcppExports.R
+9e8e47f730c14dea562b5455a9324f4d *R/logKDE.R
+d41d8cd98f00b204e9800998ecf8427e *README.md
+ba3c8c3c4bc09757e7e7853c17edfe9e *man/bw.logCV.Rd
+73c5581b9b22825c869ab43bbfe5c424 *man/bw.logG.Rd
+d522b2f56bf74c8fcdb3c2bfd9c8fb32 *man/logdensity.Rd
+7718789163a1bf0ae5fb6c8caa65a630 *man/logdensity_fft.Rd
+13e9961e20e94e49b876636dfd8015af *src/RcppExports.cpp
+a341ce8e71107882a98492cd1bfd39d1 *src/logKDE.cpp
