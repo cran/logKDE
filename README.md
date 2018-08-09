@@ -6,7 +6,10 @@
 <img src="http://www.r-pkg.org/badges/version-last-release/logKDE"></img></a>
 [![Downloads from the RStudio CRAN
 mirror](http://cranlogs.r-pkg.org/badges/logKDE)](https://CRAN.R-project.org/package=logKDE)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1317784.svg)](https://doi.org/10.5281/zenodo.1317784)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1339352.svg)](https://doi.org/10.5281/zenodo.1339352)
+[![DOI](http://joss.theoj.org/papers/10.21105/joss.00870/status.svg)](https://doi.org/10.21105/joss.00870)
+[![Build
+Status](https://travis-ci.org/andrewthomasjones/logKDE.svg?branch=master)](https://travis-ci.org/andrewthomasjones/logKDE)
 
 The goal of logKDE is to provide a set of functions for kernel density
 estimation on the positive domain, using log-kernel density functions,
@@ -72,7 +75,7 @@ install.packages("logKDE", repos='http://cran.us.r-project.org')
 
 An archival build of `logKDE` is available at
 <https://zenodo.org/record/1317784>. Manual installation instructions
-can be found within the R installation and administration manual
+can be found within the *R* installation and administration manual
 <https://cran.r-project.org/doc/manuals/r-release/R-admin.html>.
 
 ## Examples
@@ -239,10 +242,13 @@ grid()
 
 We observe that the `logdensity_fft` outputs are noticiably smoother
 than those of `logdensity`. This is because fast Fourier transformations
-only yield evaluations kernel density estimates at discrete points, and
-the regions between these discrete points are approximated via a linear
+(FFT) only yield kernel density estimates at discrete points, and the
+regions between these discrete points are approximated via a linear
 approximator, namely using the `approx` function. This is the same
 evaluation technique as that which is used in the function `density`.
+Additionally the FFT approximation points are evenly space on the real
+line, whereas those used for `logdensity` are evenly spaced on a log
+scale.
 
 -----
 
@@ -257,7 +263,7 @@ estimators are constructed using the `logdensity` function.
 library(logKDE)
 
 ## Set a random seed.
-set.seed(10)
+set.seed(1)
 
 ## Generate strictly positive data.
 ## Data are generated from a chi-squared distribution with 12 degrees of freedom.
@@ -296,10 +302,34 @@ grid()
 
 ![](man/figures/README-example4-1.png)<!-- -->
 
+## Unit testing
+
+Using the package `testthat`, we have conducted the following unit test
+for the GitHub build, on the date: 06 August, 2018. The testing files
+are contained in the
+[tests](https://github.com/andrewthomasjones/logKDE/tree/master/tests)
+folder of the respository.
+
+``` r
+
+
+## Load 'logKDE' library.
+library(logKDE)
+
+## Load 'testthat' library.
+library(testthat)
+
+## Test 'logKDE'.
+test_package('logKDE')
+#> ══ testthat results  ════════════════════════════════════════════════════════════════════════════════════════════════════
+#> OK: 74 SKIPPED: 0 FAILED: 0
+```
+
 ## Bug reporting and contributions
 
 Thank you for your interest in `logKDE`. If you happen to find any bugs
 in the program, then please report them on the Issues page
-(<https://github.com/andrewthomasjones/logKDE/issues>). Furthermore, if
-you would like to make a contribution to the software, then please
-forward a pull request to the owner of the repository.
+(<https://github.com/andrewthomasjones/logKDE/issues>). Support can also
+be sought on this page. Furthermore, if you would like to make a
+contribution to the software, then please forward a pull request to the
+owner of the repository.
